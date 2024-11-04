@@ -30,4 +30,12 @@ public class Retangulo {
     public int calcularPerimetro() {
         return (base * 2) + (altura * 2);
     }
+
+    public void exibeArea() {
+        System.out.println("A área do retangulo é " + calcularArea());
+    }
+    
+    public void exibePerimetro() {
+        System.out.println("O perímetro do retangulo é " + calcularPerimetro());
+    }
 }
