@@ -41,53 +41,12 @@ public class Conta {
     public double consultaSaldo() {
         return saldo;
     }
-
+    
     public String getNome() {
         return nome;
     }
 
     public int getNumero() {
         return numero;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Conta conta = new Conta();
-
-        System.out.println("Conta criada com sucesso!");
-        System.out.println("Titular: " + conta.getNome());
-        System.out.println("Número da Conta: " + conta.getNumero());
-        System.out.println("Saldo Inicial: " + conta.consultaSaldo());
-
-        while (true) {
-            System.out.println("\nEscolha uma operação:");
-            System.out.println("1 - Depositar");
-            System.out.println("2 - Retirar");
-            System.out.println("3 - Consultar Saldo");
-            System.out.println("4 - Sair");
-            System.out.print("Opção: ");
-            int opcao = scanner.nextInt();
-
-            if (opcao == 1) {
-                System.out.print("Digite o valor para depositar: ");
-                double valor = scanner.nextDouble();
-                conta.depositar(valor);
-            } else if (opcao == 2) {
-                System.out.print("Digite o valor para retirar: ");
-                double valor = scanner.nextDouble();
-                boolean sucesso = conta.retirar(valor);
-                if (!sucesso) {
-                    System.out.println("Operação de retirada falhou.");
-                }
-            } else if (opcao == 3) {
-                System.out.println("Saldo atual: " + conta.consultaSaldo());
-            } else if (opcao == 4) {
-                System.out.println("Encerrando o sistema...");
-                break;
-            } else {
-                System.out.println("Opção inválida. Tente novamente.");
-            }
-        }
-        scanner.close();
     }
 }
